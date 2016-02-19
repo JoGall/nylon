@@ -34,4 +34,4 @@ In order to calibrate the assay and choose an appropriate threshold to define en
 
 I assayed encapsulation manually using the thresholding tool in open source image analysis software, [ImageJ](http://imagej.nih.gov/ij/). The automated threshold iteratation can be performed for example by:
 
-Sample images and an example R script, "calibrateThreshold.R", are provided in the directory  [`nylon/calibration_example/`](https://github.com/JoGall/nylon/tree/master/calibration_example).
+Sample images and an example R script, "calibrateThreshold.R", are provided in the directory  [`nylon/calibration_example/`](https://github.com/JoGall/nylon-encapsulation/tree/master/calibration_example).
