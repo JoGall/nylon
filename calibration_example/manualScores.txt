@@ -1,0 +1,11 @@
+Image	encapArea
+dark1.jpg	116556		
+dark2.jpg	192506
+dark3.jpg	140193
+dark4.jpg	214930
+dark5.jpg	151951
+light1.jpg	9798
+light2.jpg	1839
+light3.jpg	3202
+light4.jpg	2349
+light5.jpg	3441
