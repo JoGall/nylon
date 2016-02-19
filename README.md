@@ -5,7 +5,7 @@ An automated procedure to quantify encapsulation, melanisation and length of nyl
 
 The script requires an installation of the Open Source Computer Vision library, [OpenCV](http://opencv.org/quickstart.html.). The script needs to be compiled. For example, using the GNU C++ compiler for Linux:
 
-```g ++ -ggdb `pkg-config --cflags opencv` -o ./nylon ./nylonAnalysis.cpp `pkg-config --libs opencv````
+```g ++ -ggdb `pkg-config --cflags opencv` -o ./nylon ./nylonAnalysis.cpp `pkg-config --libs opencv` ```
 
 
 ### General use
@@ -21,7 +21,7 @@ Where `lower_threshold` equals the desired lower brightness threshold and `upper
 #####Examples
 When compiled as above, to iterate over all possible brightness thresholds (0-255) for all .jpg images in current directory:
 
-```'./nylon 0 256 *.jpg'```
+```./nylon 0 256 *.jpg```
 
 
 To define only one brightness threshold (99) for all .jpg images in current directory:
@@ -34,4 +34,4 @@ In order to calibrate the assay and choose an appropriate threshold to define en
 
 I assayed encapsulation manually using the thresholding tool in open source image analysis software, [ImageJ](http://imagej.nih.gov/ij/). The automated threshold iteratation can be performed for example by:
 
-Sample images and an example R script, "calibrateThreshold.R", are provided in the directory,  [`nylon/calibration_example/`](https://github.com/JoGall/nylon/tree/master/calibration_example).
+Sample images and an example R script, "calibrateThreshold.R", are provided in the directory  [`nylon/calibration_example/`](https://github.com/JoGall/nylon/tree/master/calibration_example).
