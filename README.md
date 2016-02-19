@@ -1,4 +1,5 @@
-An automated procedure to quantify encapsulation, melanisation and length of nylon monofilaments used in immunological assays
+# Nylon image analysis
+An automated procedure to quantify encapsulation, melanisation and length of nylon monofilaments used in immunological assays.
 
 ### Requirements and compilation
 
@@ -8,7 +9,7 @@ The script requires an installation of the Open Source Computer Vision library, 
 
 
 ### General use
-Visually defining the degree of nylon encapsulation is a subjective process, as the user must decide what is areas of the image are sufficiently dark enough to constitute cellular encapsulation. The script therefore requires a brightness threshold to be defined, and the number of pixels in the main contour below this threshold counted.
+Visually defining the degree of nylon encapsulation is a subjective process, as the user must decide what is areas of the image are sufficiently dark enough to constitute cellular encapsulation. The script therefore requires a brightness threshold to be defined, and the number of pixels in the main contour (the nylon monofilament) below this threshold is counted. Foreground extraction works best when images of the nylon are captured against a lighter, contrasting background.
 
 ### Command line usage:
 
@@ -33,4 +34,4 @@ In order to calibrate the assay and choose an appropriate threshold to define en
 
 I assayed encapsulation manually using the thresholding tool in open source image analysis software, [ImageJ](http://imagej.nih.gov/ij/). The automated threshold iteratation can be performed for example by:
 
-Sample images and an example R script, "calibrateThreshold.R", are provided in [`nylon/calibration_example/`](https://github.com/JoGall/nylon/tree/master/calibration_example).
+Sample images and an example R script, "calibrateThreshold.R", are provided in the directory,  [`nylon/calibration_example/`](https://github.com/JoGall/nylon/tree/master/calibration_example).
