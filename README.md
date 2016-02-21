@@ -1,11 +1,11 @@
 # Nylon image analysis
-An automated procedure to quantify encapsulation, melanisation and length of nylon monofilaments used in immunological assays.
+Quantifies encapsulation, melanisation and length of nylon monofilaments used in immunological assays.
 
 ### Requirements and compilation
 
-The script requires an installation of the Open Source Computer Vision library, [OpenCV](http://opencv.org/quickstart.html.). The script needs to be compiled. For example, using the GNU C++ compiler for Linux:
+The script requires an installation of the Open Source Computer Vision library, [OpenCV](http://opencv.org/quickstart.html.). The script then needs to be compiled; for example, using the GNU C++ compiler on Linux:
 
-```g ++ -ggdb `pkg-config --cflags opencv` -o ./nylon ./nylonAnalysis.cpp `pkg-config --libs opencv` ```
+```g ++ -ggdb -o ./nylon ./nylonAnalysis.cpp `pkg-config --cflags opencv` `pkg-config --libs opencv` ```
 
 
 ### General use
@@ -19,19 +19,24 @@ Where `lower_threshold` equals the desired lower brightness threshold and `upper
 
 
 #####Examples
-When compiled as above, to iterate over all possible brightness thresholds (0-255) for all .jpg images in current directory:
-
-```./nylon 0 256 *.jpg```
-
-
-To define only one brightness threshold (99) for all .jpg images in current directory:
+When compiled with the program name 'nylon', as above. To define one brightness threshold (99) for all .jpg images in current directory:
 
 ```./nylon 99 100 *.jpg```
 
+To define a brightness threshold range (90-110) for two images, 'test1.jpg' and 'test2.jpg'.
+
+```./nylon 90 111 test1.jpg test2.jpg```
+
+Note that by default, image mask files are only outputted when **one** brightness threshold is defined.
+
 
 ### Calibration
-In order to calibrate the assay and choose an appropriate threshold to define encapsulation, we can compare a few manually-calculated encapsulation scores with automatically-calculated encapsulation scores for the same images across all possible brightness thresholds, and find the automated brightness threshold which provides the closest match.
+In order to calibrate the assay, an appropriate brightness threshold must be used to define encapsulation. This could be approximated by eye, testing different thresholds and viewing the resultant image mask to find a good estimate. However, for a more rigorous calibration, we can iterate the script over all brightness thresholds (0-255) for a few images, and compare this with manually-calculated scores for the same images to find the automated threshold with the closest match.
 
-I assayed encapsulation manually using the thresholding tool in open source image analysis software, [ImageJ](http://imagej.nih.gov/ij/). The automated threshold iteratation can be performed for example by:
+Automation of the script over all brightness thresholds can be achieved by, for example:
 
-Sample images and an example R script, "calibrateThreshold.R", are provided in the directory  [`nylon/calibration_example/`](https://github.com/JoGall/nylon-encapsulation/tree/master/calibration_example).
+```./nylon 0 256 *.jpg```
+
+For manual scoring of encapsulation, the open source image analysis software [ImageJ](http://imagej.nih.gov/ij/) is a useful tool. Briefly, we can convert images to greyscale (`Image > Type > 8-bit`), brightness threshold appropriately (`Image > Adjust > Threshold`), and measure the resultant number of pixels under the threshold (`Analyze > Measure`). For images with background noise, the `Polygon selection` or `Freehand selection` tools can be used to extract the desired foreground and give a more accurate measurement.
+
+Sample images and an example R script, "calibrateThreshold.R", are provided at  [`nylon/calibration_example/`](https://github.com/JoGall/nylon-encapsulation/tree/master/calibration_example).
