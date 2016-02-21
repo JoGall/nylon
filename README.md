@@ -9,9 +9,9 @@ The script requires an installation of the Open Source Computer Vision library, 
 
 
 ### General use
-Visually defining the degree of nylon encapsulation is a subjective process, as the user must decide what is areas of the image are sufficiently dark enough to constitute cellular encapsulation. The script therefore requires a brightness threshold to be defined, and the number of pixels in the main contour (the nylon monofilament) below this threshold is counted. Foreground extraction works best when images of the nylon are captured against a lighter, contrasting background.
+Visually defining the degree of nylon encapsulation is a subjective process, as the user must decide what is areas of the image are sufficiently dark enough to constitute cellular encapsulation. The script therefore requires a brightness threshold to be defined, and the number of pixels in the foreground (the nylon monofilament) below this threshold is counted. A solution for choosing an appropriate brightness threshold is offered below. Foreground extraction works best when images of the nylon are captured against a light and contrasting background.
 
-### Command line usage:
+### Command line use
 
 ```./PROGRAM_NAME lower_threshold upper_threshold FILE_1 FILE_2 ..```
 
