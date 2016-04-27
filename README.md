@@ -7,7 +7,7 @@ Visually defining the degree of nylon encapsulation is a subjective process, as 
 #### a) Compilation
 The script requires an installation of the Open Source Computer Vision library, [OpenCV](http://opencv.org/quickstart.html.). The script then needs to be compiled; for example, using the GNU C++ compiler on Linux:
 
-```g ++ -ggdb -o ./nylon ./nylonAnalysis.cpp `pkg-config --cflags opencv` `pkg-config --libs opencv` ```
+```g++ -ggdb -o ./nylon ./nylonAnalysis.cpp `pkg-config --cflags opencv` `pkg-config --libs opencv` ```
 
 #### b) Command line use
 
